@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VGA Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #008000;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #008000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #006400;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>VGA Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What does VGA stand for?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Video Graphics Array</button>
+      <button class="option" onclick="checkAnswer('b1')">Visual Graphics Adapter</button>
+      <button class="option" onclick="checkAnswer('c1')">Virtual Graphics Array</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. In what year was VGA first introduced?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">1983</button>
+      <button class="option" onclick="checkAnswer('b2')">1990</button>
+      <button class="option" onclick="checkAnswer('c2')">2000</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. What is the maximum resolution supported by standard VGA?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">640x480</button>
+      <button class="option" onclick="checkAnswer('b3')">1024x768</button>
+      <button class="option" onclick="checkAnswer('c3')">1920x1080</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. Which type of connector does VGA typically use?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">DVI</button>
+      <button class="option" onclick="checkAnswer('b4')">HDMI</button>
+      <button class="option" onclick="checkAnswer('c4')">DB-15</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. VGA is an analog or digital signal?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Analog</button>
+      <button class="option" onclick="checkAnswer('b5')">Digital</button>
+      <button class="option" onclick="checkAnswer('c5')">Both</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. Which of the following is a common variant of VGA that supports higher resolutions?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">SVGA</button>
+      <button class="option" onclick="checkAnswer('b6')">XGA</button>
+      <button class="option" onclick="checkAnswer('c6')">EGA</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. What is the color depth supported by standard VGA?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">16 colors</button>
+      <button class="option" onclick="checkAnswer('b7')">256 colors</button>
+      <button class="option" onclick="checkAnswer('c7')">16 million colors</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. Which connector is commonly used for connecting a VGA cable to a computer?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">USB-C</button>
+      <button class="option" onclick="checkAnswer('b8')">RJ45</button>
+      <button class="option" onclick="checkAnswer('c8')">DB-15</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. What is the main limitation of VGA compared to modern display interfaces?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Limited resolution support</button>
+      <button class="option" onclick="checkAnswer('b9')">Incompatibility with modern computers</button>
+      <button class="option" onclick="checkAnswer('c9')">Limited color depth</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. VGA was commonly used for connecting computers to what type of devices?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Printers</button>
+      <button class="option" onclick="checkAnswer('b10')">Monitors</button>
+      <button class="option" onclick="checkAnswer('c10')">Refrigerators</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        a1: true,
+        a2: true,
+        a3: true,
+        c4: true,
+        a5: true,
+        a6: true,
+        c7: true,
+        c8: true,
+        a9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

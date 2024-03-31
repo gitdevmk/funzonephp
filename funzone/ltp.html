@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laptop Power Cord Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #006400;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #006400;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #008000;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>Laptop Power Cord Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What is the primary purpose of a laptop power cord?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Data transmission</button>
+      <button class="option" onclick="checkAnswer('b1')">Teleportation</button>
+      <button class="option" onclick="checkAnswer('c1')">Power delivery</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. Which type of connector is commonly found at one end of a laptop power cord?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">USB Type-C</button>
+      <button class="option" onclick="checkAnswer('b2')">Power plug</button>
+      <button class="option" onclick="checkAnswer('c2')">Ethernet port</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. What is the standard voltage rating for laptop power cords in most countries?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">5V</button>
+      <button class="option" onclick="checkAnswer('b3')">120V</button>
+      <button class="option" onclick="checkAnswer('c3')">220-240V</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. Laptop power cords are commonly used to connect the power supply to:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">Microwaves</button>
+      <button class="option" onclick="checkAnswer('b4')">Refrigerators</button>
+      <button class="option" onclick="checkAnswer('c4')">Laptops</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. What safety feature is often included in laptop power cords to prevent electrical shocks?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Self-destruct button</button>
+      <button class="option" onclick="checkAnswer('b5')">Fuse or circuit breaker</button>
+      <button class="option" onclick="checkAnswer('c5')">Coffee maker</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. In which region is the Type B power plug commonly used?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">North America</button>
+      <button class="option" onclick="checkAnswer('b6')">Europe</button>
+      <button class="option" onclick="checkAnswer('c6')">Asia</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. Laptop power cords are NOT typically used to power:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Table lamps</button>
+      <button class="option" onclick="checkAnswer('b7')">Laptop chargers</button>
+      <button class="option" onclick="checkAnswer('c7')">Blenders</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. The C5 (Cloverleaf) connector is commonly found at the other end of a laptop power cord and is used for connecting to:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">Portable fans</button>
+      <button class="option" onclick="checkAnswer('b8')">Laptops and power bricks</button>
+      <button class="option" onclick="checkAnswer('c8')">Satellites</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. Laptop power cords are often referred to by names such as:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Slinky cables</button>
+      <button class="option" onclick="checkAnswer('b9')">Rainbow wires</button>
+      <button class="option" onclick="checkAnswer('c9')">AC adapters or chargers</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. The length of a laptop power cord is typically measured in:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Laptops</button>
+      <button class="option" onclick="checkAnswer('b10')">Centimeters or feet</button>
+      <button class="option" onclick="checkAnswer('c10')">Pineapples</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        c1: true,
+        b2: true,
+        c3: true,
+        c4: true,
+        b5: true,
+        a6: true,
+        a7: true,
+        b8: true,
+        c9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

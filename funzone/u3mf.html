@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB 3.0 Extension Cable Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #4169E1;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4169E1;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #000080;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>USB 3.0 Extension Cable Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What is the primary purpose of a USB 3.0 extension cable?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Data transmission</button>
+      <button class="option" onclick="checkAnswer('b1')">Time travel</button>
+      <button class="option" onclick="checkAnswer('c1')">Power delivery</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. What is the maximum data transfer rate supported by USB 3.0 extension cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">480 Mbps</button>
+      <button class="option" onclick="checkAnswer('b2')">5 Gbps</button>
+      <button class="option" onclick="checkAnswer('c2')">10 Gbps</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. USB 3.0 extension cables typically use which type of connectors?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">USB Type-A</button>
+      <button class="option" onclick="checkAnswer('b3')">USB Type-B</button>
+      <button class="option" onclick="checkAnswer('c3')">USB Type-C</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. What is the maximum recommended length for USB 3.0 extension cables to maintain signal integrity?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">1 meter</button>
+      <button class="option" onclick="checkAnswer('b4')">5 meters</button>
+      <button class="option" onclick="checkAnswer('c4')">15 meters</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. USB 3.0 extension cables are commonly used to extend the reach of:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Banana peels</button>
+      <button class="option" onclick="checkAnswer('b5')">Electric toothbrushes</button>
+      <button class="option" onclick="checkAnswer('c5')">USB peripherals (e.g., external hard drives, cameras)</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. USB 3.0 extension cables are backward compatible with:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">USB 1.0</button>
+      <button class="option" onclick="checkAnswer('b6')">Vinyl records</button>
+      <button class="option" onclick="checkAnswer('c6')">Parallel ports</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. Which devices are NOT commonly connected using USB 3.0 extension cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Printers</button>
+      <button class="option" onclick="checkAnswer('b7')">USB flash drives</button>
+      <button class="option" onclick="checkAnswer('c7')">Microwaves</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. USB 3.0 extension cables may be used to connect devices that require:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">Sunscreen</button>
+      <button class="option" onclick="checkAnswer('b8')">Higher power for charging</button>
+      <button class="option" onclick="checkAnswer('c8')">Sonic screwdrivers</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. What is the primary advantage of using a USB 3.0 extension cable over a USB 2.0 extension cable?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Faster data transfer speeds</button>
+      <button class="option" onclick="checkAnswer('b9')">Glow-in-the-dark capability</button>
+      <button class="option" onclick="checkAnswer('c9')">Increased weight capacity</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. USB 3.0 extension cables are generally compatible with most:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Recipes for spaghetti bolognese</button>
+      <button class="option" onclick="checkAnswer('b10')">USB 2.0 and USB 3.1 devices</button>
+      <button class="option" onclick="checkAnswer('c10')">Paper airplanes</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        a1: true,
+        c2: true,
+        a3: true,
+        c4: true,
+        c5: true,
+        a6: true,
+        c7: true,
+        b8: true,
+        a9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

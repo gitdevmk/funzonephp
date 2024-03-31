@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini DisplayPort to HDMI Cable Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #2E8B57;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #2E8B57;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #228B22;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>Mini DisplayPort to HDMI Cable Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What is the primary function of a Mini DisplayPort to HDMI cable?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Audio transmission</button>
+      <button class="option" onclick="checkAnswer('b1')">Video transmission</button>
+      <button class="option" onclick="checkAnswer('c1')">Power delivery</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. Which resolution is commonly supported by Mini DisplayPort to HDMI cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">720p</button>
+      <button class="option" onclick="checkAnswer('b2')">1080p</button>
+      <button class="option" onclick="checkAnswer('c2')">4K</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. Mini DisplayPort to HDMI cables often support which version of HDMI for high-quality transmission?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">HDMI 1.0</button>
+      <button class="option" onclick="checkAnswer('b3')">HDMI 2.0</button>
+      <button class="option" onclick="checkAnswer('c3')">HDMI 2.1</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. What is the advantage of using a Mini DisplayPort to HDMI cable over older HDMI standards?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">Higher power delivery</button>
+      <button class="option" onclick="checkAnswer('b4')">Improved audio quality</button>
+      <button class="option" onclick="checkAnswer('c4')">Support for higher resolutions</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. Mini DisplayPort to HDMI cables may support additional features such as:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Teleportation</button>
+      <button class="option" onclick="checkAnswer('b5')">3D video</button>
+      <button class="option" onclick="checkAnswer('c5')">Mind reading</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. Which devices are commonly connected using Mini DisplayPort to HDMI cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Refrigerators</button>
+      <button class="option" onclick="checkAnswer('b6')">CRT monitors</button>
+      <button class="option" onclick="checkAnswer('c6')">Laptops, desktops, and projectors</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. What is the maximum refresh rate supported by most Mini DisplayPort to HDMI cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">30Hz</button>
+      <button class="option" onclick="checkAnswer('b7')">60Hz</button>
+      <button class="option" onclick="checkAnswer('c7')">120Hz</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. Mini DisplayPort to HDMI cables may also transmit signals for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">Sending postcards</button>
+      <button class="option" onclick="checkAnswer('b8')">Ethernet</button>
+      <button class="option" onclick="checkAnswer('c8')">Smoke signals</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. What is the primary advantage of using Mini DisplayPort for HDMI output?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Limited compatibility</button>
+      <button class="option" onclick="checkAnswer('b9')">Reversible plug orientation</button>
+      <button class="option" onclick="checkAnswer('c9')">Support for VGA monitors</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. Mini DisplayPort to HDMI cables are commonly used for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Dog walking</button>
+      <button class="option" onclick="checkAnswer('b10')">Gaming, presentations, and media playback</button>
+      <button class="option" onclick="checkAnswer('c10')">Sculpting clay</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        b1: true,
+        c2: true,
+        b3: true,
+        c4: true,
+        b5: true,
+        c6: true,
+        b7: true,
+        b8: true,
+        b9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

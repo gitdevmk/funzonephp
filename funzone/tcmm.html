@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type-C to Type-C Cable Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #000080;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #000080;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #000066;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>Type-C to Type-C Cable Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What type of connector does a USB Type-C to Type-C cable use on both ends?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">USB-A</button>
+      <button class="option" onclick="checkAnswer('b1')">USB-B</button>
+      <button class="option" onclick="checkAnswer('c1')">USB Type-C</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. Which video resolutions are commonly supported by USB Type-C to Type-C cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">720p and 1080p</button>
+      <button class="option" onclick="checkAnswer('b2')">4K and 8K</button>
+      <button class="option" onclick="checkAnswer('c2')">480p and 720p</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. What is the maximum power delivery capability of USB Type-C to Type-C cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">15W</button>
+      <button class="option" onclick="checkAnswer('b3')">100W</button>
+      <button class="option" onclick="checkAnswer('c3')">200W</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. USB Type-C to Type-C cables use which technology for high-speed data transfer?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">USB 1.0</button>
+      <button class="option" onclick="checkAnswer('b4')">USB 2.0</button>
+      <button class="option" onclick="checkAnswer('c4')">USB 3.1 or USB 4.0</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. What is the distinguishing feature of USB Type-C cables that enables reversible plug orientation?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">L-shaped connector</button>
+      <button class="option" onclick="checkAnswer('b5')">Rotating connector</button>
+      <button class="option" onclick="checkAnswer('c5')">Symmetrical connector</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. USB Type-C to Type-C cables may support which audio technology for enhanced audio quality?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Mono sound</button>
+      <button class="option" onclick="checkAnswer('b6')">Stereo sound</button>
+      <button class="option" onclick="checkAnswer('c6')">USB Audio Class 3.0</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. Which of the following is a common use case for USB Type-C to Type-C cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Charging smartphones only</button>
+      <button class="option" onclick="checkAnswer('b7')">Connecting laptops to monitors and peripherals</button>
+      <button class="option" onclick="checkAnswer('c7')">Connecting legacy devices with USB-A ports</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. USB Type-C to Type-C cables often support Power Delivery (PD) for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">Powering only</button>
+      <button class="option" onclick="checkAnswer('b8')">Powering and data transfer</button>
+      <button class="option" onclick="checkAnswer('c8')">Audio output</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. What is the primary advantage of USB Type-C to Type-C cables for 4K and 8K video?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Limited resolution support</button>
+      <button class="option" onclick="checkAnswer('b9')">High data transfer speeds</button>
+      <button class="option" onclick="checkAnswer('c9')">Reversible plug orientation</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. USB Type-C to Type-C cables are commonly used for connecting devices with:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Parallel ports</button>
+      <button class="option" onclick="checkAnswer('b10')">USB-B ports</button>
+      <button class="option" onclick="checkAnswer('c10')">USB Type-C ports</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        c1: true,
+        b2: true,
+        c3: true,
+        c4: true,
+        c5: true,
+        c6: true,
+        b7: true,
+        b8: true,
+        b9: true,
+        c10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

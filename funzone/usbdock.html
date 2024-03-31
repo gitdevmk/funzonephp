@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB 3.0/Type-C Adapter Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #228B22;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #228B22;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #32CD32;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>USB 3.0/Type-C Adapter Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What is the main purpose of a USB 3.0/Type-C to Dual HDMI, VGA, Gigabit LAN, Card Reader, USB 3.0, Audio adapter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Making sandwiches</button>
+      <button class="option" onclick="checkAnswer('b1')">Expanding connectivity options for a laptop or computer</button>
+      <button class="option" onclick="checkAnswer('c1')">Launching satellites</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. Which video outputs are supported by this adapter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">Black and white TV</button>
+      <button class="option" onclick="checkAnswer('b2')">Dual HDMI and VGA</button>
+      <button class="option" onclick="checkAnswer('c2')">Smoke signals</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. What is the benefit of having Gigabit LAN on this adapter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">Climbing mountains</button>
+      <button class="option" onclick="checkAnswer('b3')">High-speed wired network connectivity</button>
+      <button class="option" onclick="checkAnswer('c3')">Swimming with dolphins</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. The USB 3.0 ports on the adapter are useful for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">Charging your pet robot</button>
+      <button class="option" onclick="checkAnswer('b4')">Connecting USB devices with high data transfer rates</button>
+      <button class="option" onclick="checkAnswer('c4')">Skydiving</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. What is the purpose of the Card Reader on this adapter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Solving Sudoku puzzles</button>
+      <button class="option" onclick="checkAnswer('b5')">Reading and transferring data from memory cards</button>
+      <button class="option" onclick="checkAnswer('c5')">Hosting tea parties</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. The audio feature on this adapter is designed for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Whispering secrets to plants</button>
+      <button class="option" onclick="checkAnswer('b6')">Providing audio output and input capabilities</button>
+      <button class="option" onclick="checkAnswer('c6')">Moonwalking</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. Which of the following is NOT a feature of this adapter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Built-in espresso maker</button>
+      <button class="option" onclick="checkAnswer('b7')">Dual HDMI and VGA outputs</button>
+      <button class="option" onclick="checkAnswer('c7')">USB 3.0 ports</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. USB Type-C compatibility ensures:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">Teleportation abilities</button>
+      <button class="option" onclick="checkAnswer('b8')">Versatile and reversible connection with supported devices</button>
+      <button class="option" onclick="checkAnswer('c8')">Becoming a wizard</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. Which scenario is suitable for using this adapter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Deep-sea diving</button>
+      <button class="option" onclick="checkAnswer('b9')">Connecting a laptop to multiple displays, a wired network, and peripherals</button>
+      <button class="option" onclick="checkAnswer('c9')">Running a marathon</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. What is crucial when using this adapter for dual extended output?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Reciting the alphabet backward</button>
+      <button class="option" onclick="checkAnswer('b10')">Ensuring compatibility with the device's graphics capabilities</button>
+      <button class="option" onclick="checkAnswer('c10')">Juggling flaming torches</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        b1: true,
+        b2: true,
+        b3: true,
+        b4: true,
+        b5: true,
+        b6: true,
+        b7: true,
+        b8: true,
+        b9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

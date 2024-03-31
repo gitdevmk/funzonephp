@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type-C Docking Station Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #800080;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #800080;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #6A006A;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>Type-C Docking Station Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What type of connector does a USB Type-C docking station use?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">USB-A</button>
+      <button class="option" onclick="checkAnswer('b1')">USB-B</button>
+      <button class="option" onclick="checkAnswer('c1')">USB Type-C</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. What is the primary advantage of USB Type-C docking stations over traditional USB-A docking stations?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">Higher data transfer speeds</button>
+      <button class="option" onclick="checkAnswer('b2')">Lower power consumption</button>
+      <button class="option" onclick="checkAnswer('c2')">Smaller connector size</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. USB Type-C docking stations often support which display technology for video output?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">VGA</button>
+      <button class="option" onclick="checkAnswer('b3')">HDMI</button>
+      <button class="option" onclick="checkAnswer('c3')">DisplayPort</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. What is the maximum power delivery capability of USB Type-C docking stations?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">15W</button>
+      <button class="option" onclick="checkAnswer('b4')">60W</button>
+      <button class="option" onclick="checkAnswer('c4')">100W</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. USB Type-C docking stations may include additional ports such as:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Parallel port</button>
+      <button class="option" onclick="checkAnswer('b5')">PS/2 port</button>
+      <button class="option" onclick="checkAnswer('c5')">Ethernet port</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. Which operating systems are typically compatible with USB Type-C docking stations?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Windows only</button>
+      <button class="option" onclick="checkAnswer('b6')">MacOS only</button>
+      <button class="option" onclick="checkAnswer('c6')">Windows, MacOS, and Linux</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. USB Type-C docking stations can support multiple peripherals through:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Daisy-chaining</button>
+      <button class="option" onclick="checkAnswer('b7')">Bluetooth</button>
+      <button class="option" onclick="checkAnswer('c7')">Wireless LAN</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. What is the advantage of USB Type-C docking stations with Power Delivery (PD) support?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">Faster data transfer</button>
+      <button class="option" onclick="checkAnswer('b8')">Simultaneous charging of devices</button>
+      <button class="option" onclick="checkAnswer('c8')">Lower cost</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. USB Type-C docking stations often use which technology for fast data transfer?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">USB 1.0</button>
+      <button class="option" onclick="checkAnswer('b9')">USB 2.0</button>
+      <button class="option" onclick="checkAnswer('c9')">USB 3.0 or USB 3.1</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. USB Type-C docking stations provide a versatile solution for connecting laptops to:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Printers</button>
+      <button class="option" onclick="checkAnswer('b10')">Monitors, peripherals, and power</button>
+      <button class="option" onclick="checkAnswer('c10')">Refrigerators</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        c1: true,
+        c2: true,
+        c3: true,
+        c4: true,
+        c5: true,
+        c6: true,
+        a7: true,
+        b8: true,
+        c9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

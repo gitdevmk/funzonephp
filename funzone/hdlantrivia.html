@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HDMI LAN Extender Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #4682B4;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4682B4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #5F9EA0;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>HDMI LAN Extender Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What is the primary purpose of an HDMI LAN Extender for 50 meters?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Growing plants</button>
+      <button class="option" onclick="checkAnswer('b1')">Extending HDMI signals over a LAN network for up to 50 meters</button>
+      <button class="option" onclick="checkAnswer('c1')">Bungee jumping</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. HDMI LAN Extenders for 60 meters typically use which type of cables for extension?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">Hosepipes</button>
+      <button class="option" onclick="checkAnswer('b2')">CAT5e or CAT6 Ethernet cables</button>
+      <button class="option" onclick="checkAnswer('c2')">Jump ropes</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. What is a common application for an HDMI LAN Extender for 100 meters?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">Skydiving competitions</button>
+      <button class="option" onclick="checkAnswer('b3')">Extending HDMI signals in large conference rooms or auditoriums</button>
+      <button class="option" onclick="checkAnswer('c3')">Hot air balloon rides</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. What is a key advantage of using an HDMI LAN Extender for 150 meters?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">It dispenses candy</button>
+      <button class="option" onclick="checkAnswer('b4')">Long-distance extension of high-quality HDMI signals</button>
+      <button class="option" onclick="checkAnswer('c4')">It predicts the future</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. HDMI LAN Extenders often support features such as:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Time travel</button>
+      <button class="option" onclick="checkAnswer('b5')">IR remote control pass-through and Power over Ethernet (PoE)</button>
+      <button class="option" onclick="checkAnswer('c5')">Teleportation</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. The term "LAN" in HDMI LAN Extender stands for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Laser Antenna Network</button>
+      <button class="option" onclick="checkAnswer('b6')">Local Area Network</button>
+      <button class="option" onclick="checkAnswer('c6')">Lunar Astronaut Navigation</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. HDMI LAN Extenders are suitable for scenarios where:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Underwater basket weaving competitions</button>
+      <button class="option" onclick="checkAnswer('b7')">Long-distance HDMI transmission is needed without signal degradation</button>
+      <button class="option" onclick="checkAnswer('c7')">Exploring the depths of the Mariana Trench</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. Which technology allows HDMI LAN Extenders to transmit signals over long distances?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">Carrier pigeons</button>
+      <button class="option" onclick="checkAnswer('b8')">HDBaseT or similar signal extension technologies</button>
+      <button class="option" onclick="checkAnswer('c8')">Smoke signals</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. HDMI LAN Extenders are commonly used in:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Treetop zip-lining adventures</button>
+      <button class="option" onclick="checkAnswer('b9')">Commercial installations, educational institutions, and live events</button>
+      <button class="option" onclick="checkAnswer('c9')">Navigating mazes</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. What is an essential consideration when using HDMI LAN Extenders for longer distances?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">The phase of the moon</button>
+      <button class="option" onclick="checkAnswer('b10')">Selecting the appropriate cable type and maintaining signal integrity</button>
+      <button class="option" onclick="checkAnswer('c10')">Reciting Shakespearean sonnets</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        b1: true,
+        b2: true,
+        b3: true,
+        b4: true,
+        b5: true,
+        b6: true,
+        b7: true,
+        b8: true,
+        b9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

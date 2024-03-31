@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB 3.0 Hub Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #8B4513;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #8B4513;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #A0522D;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>USB 3.0 Hub Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What is the main purpose of a USB 3.0 4-Port Hub?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Launching rockets</button>
+      <button class="option" onclick="checkAnswer('b1')">Expanding the number of available USB ports</button>
+      <button class="option" onclick="checkAnswer('c1')">Cooking spaghetti</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. Which type of USB ports are commonly found on a USB 3.0 4-Port Hub?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">USB 1.0</button>
+      <button class="option" onclick="checkAnswer('b2')">USB 3.0</button>
+      <button class="option" onclick="checkAnswer('c2')">FireWire</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. USB 3.0 4-Port Hubs are useful for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">Training hamsters</button>
+      <button class="option" onclick="checkAnswer('b3')">Connecting multiple USB devices to a single port with high data transfer rates</button>
+      <button class="option" onclick="checkAnswer('c3')">Balancing on a tightrope</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. What is a key feature of USB 3.0 4-Port Hubs?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">Time travel capability</button>
+      <button class="option" onclick="checkAnswer('b4')">SuperSpeed data transfer and backward compatibility with USB 2.0</button>
+      <button class="option" onclick="checkAnswer('c4')">X-ray vision</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. USB 3.0 is known for its:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Ability to communicate with dolphins</button>
+      <button class="option" onclick="checkAnswer('b5')">SuperSpeed data transfer and increased power delivery</button>
+      <button class="option" onclick="checkAnswer('c5')">Telekinesis</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. The term "SuperSpeed" in USB 3.0 refers to:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Running faster than a cheetah</button>
+      <button class="option" onclick="checkAnswer('b6')">Faster data transfer rates compared to previous USB standards</button>
+      <button class="option" onclick="checkAnswer('c6')">Superhero abilities</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. USB 3.0 7-Port Hubs are suitable for scenarios where:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Underwater basket weaving championships</button>
+      <button class="option" onclick="checkAnswer('b7')">Multiple USB devices need to be connected with high-speed data transfer</button>
+      <button class="option" onclick="checkAnswer('c7')">Interstellar travel</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. Which statement is true about USB 3.0 hubs?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">They can make you invisible</button>
+      <button class="option" onclick="checkAnswer('b8')">They provide backward compatibility with USB 2.0 devices</button>
+      <button class="option" onclick="checkAnswer('c8')">They double as musical instruments</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. The "3.0" in USB 3.0 refers to:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">The number of wishes granted per day</button>
+      <button class="option" onclick="checkAnswer('b9')">The third version of the USB standard</button>
+      <button class="option" onclick="checkAnswer('c9')">The number of dimensions it can travel through</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. What is an essential consideration when using a USB 3.0 Hub?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">The color of your socks</button>
+      <button class="option" onclick="checkAnswer('b10')">Ensuring proper power supply for connected devices and the hub</button>
+      <button class="option" onclick="checkAnswer('c10')">Reciting Shakespearean sonnets</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        b1: true,
+        b2: true,
+        b3: true,
+        b4: true,
+        b5: true,
+        b6: true,
+        b7: true,
+        b8: true,
+        b9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

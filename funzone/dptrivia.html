@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisplayPort Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #FFA500;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #FFA500;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #D2691E;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>DisplayPort Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What does DP stand for in DisplayPort?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Digital Port</button>
+      <button class="option" onclick="checkAnswer('b1')">Display Port</button>
+      <button class="option" onclick="checkAnswer('c1')">Data Port</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. In what year was the first version of DisplayPort introduced?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">2000</button>
+      <button class="option" onclick="checkAnswer('b2')">2008</button>
+      <button class="option" onclick="checkAnswer('c2')">2014</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. Which version of DisplayPort introduced support for 8K resolution?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">DisplayPort 1.1</button>
+      <button class="option" onclick="checkAnswer('b3')">DisplayPort 1.2</button>
+      <button class="option" onclick="checkAnswer('c3')">DisplayPort 1.4</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. How many lanes does a typical DisplayPort cable use for data transmission?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">2 lanes</button>
+      <button class="option" onclick="checkAnswer('b4')">4 lanes</button>
+      <button class="option" onclick="checkAnswer('c4')">6 lanes</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. Which audio standard is supported by DisplayPort?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Dolby Digital</button>
+      <button class="option" onclick="checkAnswer('b5')">DTS-HD Master Audio</button>
+      <button class="option" onclick="checkAnswer('c5')">DisplayPort Audio</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. DisplayPort cables use which type of connector?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Mini USB</button>
+      <button class="option" onclick="checkAnswer('b6')">USB-C</button>
+      <button class="option" onclick="checkAnswer('c6')">DisplayPort Connector</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. What is the maximum refresh rate supported by DisplayPort 1.4 at 4K resolution?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">60Hz</button>
+      <button class="option" onclick="checkAnswer('b7')">120Hz</button>
+      <button class="option" onclick="checkAnswer('c7')">240Hz</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. DisplayPort Alternate Mode allows the use of DisplayPort over which physical connector?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">HDMI</button>
+      <button class="option" onclick="checkAnswer('b8')">USB-C</button>
+      <button class="option" onclick="checkAnswer('c8')">DVI</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. What is the purpose of MST (Multi-Stream Transport) in DisplayPort?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Support multiple displays on a single port</button>
+      <button class="option" onclick="checkAnswer('b9')">Enhance audio quality</button>
+      <button class="option" onclick="checkAnswer('c9')">Improve cable durability</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. DisplayPort 2.0 introduced a new feature for ultra-high resolutions. What is it called?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Dynamic Refresh Rate</button>
+      <button class="option" onclick="checkAnswer('b10')">DSC (Display Stream Compression)</button>
+      <button class="option" onclick="checkAnswer('c10')">HDR (High Dynamic Range)</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        b1: true,
+        b2: true,
+        c3: true,
+        b4: true,
+        c5: true,
+        b6: true,
+        a7: true,
+        b8: true,
+        a9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

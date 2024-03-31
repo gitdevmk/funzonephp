@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Calculator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #calculator {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    input[type="button"] {
+      width: 23%;
+      padding: 10px;
+      margin: 1%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input[type="button"]:last-child {
+      margin-right: 0;
+    }
+
+    @media (max-width: 600px) {
+      input[type="button"] {
+        width: 48%;
+        margin: 1% 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="calculator">
+    <input type="text" id="display" disabled>
+    <br>
+    <input type="button" value="MC" onclick="clearMemory()">
+    <input type="button" value="MR" onclick="recallMemory()">
+    <input type="button" value="M+" onclick="addToMemory()">
+    <input type="button" value="M-" onclick="subtractFromMemory()">
+    <br>
+    <input type="button" value="7" onclick="appendValue('7')">
+    <input type="button" value="8" onclick="appendValue('8')">
+    <input type="button" value="9" onclick="appendValue('9')">
+    <input type="button" value="/" onclick="appendOperator('/')">
+    <br>
+    <input type="button" value="4" onclick="appendValue('4')">
+    <input type="button" value="5" onclick="appendValue('5')">
+    <input type="button" value="6" onclick="appendValue('6')">
+    <input type="button" value="-" onclick="appendOperator('-')">
+    <br>
+    <input type="button" value="1" onclick="appendValue('1')">
+    <input type="button" value="2" onclick="appendValue('2')">
+    <input type="button" value="3" onclick="appendValue('3')">
+    <input type="button" value="+" onclick="appendOperator('+')">
+    <br>
+    <input type="button" value="0" onclick="appendValue('0')">
+    <input type="button" value="." onclick="appendDecimal()">
+    <input type="button" value="±" onclick="toggleSign()">
+    <input type="button" value="=" onclick="calculate()">
+    <br>
+    <input type="button" value="√" onclick="calculateSquareRoot()">
+    <input type="button" value="x²" onclick="calculatePower(2)">
+    <input type="button" value="%" onclick="calculatePercentage()">
+    <input type="button" value="C" onclick="clearEntry()">
+    <input type="button" value="⌫" onclick="backspace()">
+  </div>
+
+  <script>
+    let memory = 0;
+
+    function clearMemory() {
+      memory = 0;
+    }
+
+    function recallMemory() {
+      document.getElementById('display').value = memory;
+    }
+
+    function addToMemory() {
+      memory += parseFloat(document.getElementById('display').value) || 0;
+    }
+
+    function subtractFromMemory() {
+      memory -= parseFloat(document.getElementById('display').value) || 0;
+    }
+
+    function toggleSign() {
+      const display = document.getElementById('display');
+      display.value = parseFloat(display.value) * -1;
+    }
+
+    function calculateSquareRoot() {
+      const display = document.getElementById('display');
+      const result = Math.sqrt(parseFloat(display.value)) || 0;
+      display.value = result;
+    }
+
+    function calculatePower(power) {
+      const display = document.getElementById('display');
+      const result = Math.pow(parseFloat(display.value), power) || 0;
+      display.value = result;
+    }
+
+    function calculatePercentage() {
+      const display = document.getElementById('display');
+      const result = (parseFloat(display.value) / 100) || 0;
+      display.value = result;
+    }
+
+    function appendValue(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function appendOperator(operator) {
+      document.getElementById('display').value += operator;
+    }
+
+    function appendDecimal() {
+      const display = document.getElementById('display');
+      if (display.value.indexOf('.') === -1) {
+        display.value += '.';
+      }
+    }
+
+    function calculate() {
+      const display = document.getElementById('display');
+      try {
+        const result = eval(display.value);
+        if (isNaN(result) || !isFinite(result)) {
+          display.value = 'Error';
+        } else {
+          display.value = result;
+        }
+      } catch (error) {
+        display.value = 'Error';
+      }
+    }
+
+    function clearEntry() {
+      document.getElementById('display').value = '';
+    }
+
+    function backspace() {
+      const display = document.getElementById('display');
+      display.value = display.value.slice(0, -1);
+    }
+
+// Keyboard support
+document.addEventListener('keydown', function(event) {
+  const key = event.key;
+  if (/[0-9+\-*/.=]/.test(key) || (key === 'Enter' || key === 'NumpadEnter') || key === 'Backspace' || key === 'Delete') {
+    event.preventDefault(); // Prevent default actions for these keys
+    document.querySelector(`[value="${key === 'Enter' || key === 'NumpadEnter' ? '=' : key}"]`).click();
+  }
+});
+
+
+
+    // Mouse and touch support
+    const buttons = document.querySelectorAll('#calculator input[type="button"]');
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        button.blur(); // Remove focus after clicking
+      });
+    });
+  </script>
+
+<img src="images/blackilogo.jpg" alt="Black-i Logo" style="width: 50px; height: auto;">
+
+
+<footer style="margin-top:10px;">
+   <p style="text-align:center; font-size:0.8em;clear:both;">&copy; Blacki Shop. All Rights Reserved.</p>
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB 2.0 Extension Cable Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #FFD700;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #FFD700;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #DAA520;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>USB 2.0 Extension Cable Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What is the primary purpose of a USB 2.0 extension cable?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Data transmission</button>
+      <button class="option" onclick="checkAnswer('b1')">Teleportation</button>
+      <button class="option" onclick="checkAnswer('c1')">Power delivery</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. What is the maximum data transfer rate supported by USB 2.0 extension cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">480 Mbps</button>
+      <button class="option" onclick="checkAnswer('b2')">1 Gbps</button>
+      <button class="option" onclick="checkAnswer('c2')">10 Gbps</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. USB 2.0 extension cables typically use which type of connectors?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">USB Type-A</button>
+      <button class="option" onclick="checkAnswer('b3')">USB Type-B</button>
+      <button class="option" onclick="checkAnswer('c3')">USB Type-C</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. What is the maximum recommended length for USB 2.0 extension cables to maintain signal integrity?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">1 meter</button>
+      <button class="option" onclick="checkAnswer('b4')">5 meters</button>
+      <button class="option" onclick="checkAnswer('c4')">10 meters</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. USB 2.0 extension cables are commonly used to extend the reach of:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Wifi signals</button>
+      <button class="option" onclick="checkAnswer('b5')">Coffee machines</button>
+      <button class="option" onclick="checkAnswer('c5')">USB peripherals (e.g., printers, cameras)</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. USB 2.0 extension cables are backward compatible with:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">USB 1.0</button>
+      <button class="option" onclick="checkAnswer('b6')">FireWire</button>
+      <button class="option" onclick="checkAnswer('c6')">Bluetooth</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. Which devices are NOT commonly connected using USB 2.0 extension cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Keyboards</button>
+      <button class="option" onclick="checkAnswer('b7')">USB flash drives</button>
+      <button class="option" onclick="checkAnswer('c7')">Refrigerators</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. USB 2.0 extension cables may be used in conjunction with USB hubs to:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">Create a USB zoo</button>
+      <button class="option" onclick="checkAnswer('b8')">Expand the number of available USB ports</button>
+      <button class="option" onclick="checkAnswer('c8')">Launch rockets</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. What is the primary advantage of using a USB 2.0 extension cable over a longer USB 2.0 cable?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Increased data transfer speed</button>
+      <button class="option" onclick="checkAnswer('b9')">Lower cost</button>
+      <button class="option" onclick="checkAnswer('c9')">Reduced signal degradation</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. USB 2.0 extension cables are generally compatible with most:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Spaghetti recipes</button>
+      <button class="option" onclick="checkAnswer('b10')">USB 3.0 and USB 1.1 devices</button>
+      <button class="option" onclick="checkAnswer('c10')">Satellite TV systems</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        a1: true,
+        a2: true,
+        a3: true,
+        b4: true,
+        c5: true,
+        a6: true,
+        c7: true,
+        b8: true,
+        c9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

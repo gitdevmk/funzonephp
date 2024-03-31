@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB to LAN Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #000080;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #000080;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #0000CD;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>USB to LAN Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What does a USB to LAN adapter allow you to do?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Bake cookies</button>
+      <button class="option" onclick="checkAnswer('b1')">Connect a computer to a local area network using a USB port</button>
+      <button class="option" onclick="checkAnswer('c1')">Translate languages in real-time</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. Which type of connector is commonly found on the LAN end of a USB to LAN adapter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">USB Type-C</button>
+      <button class="option" onclick="checkAnswer('b2')">HDMI</button>
+      <button class="option" onclick="checkAnswer('c2')">RJ45 (Ethernet)</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. USB to LAN adapters are often used for improving:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">Gardening skills</button>
+      <button class="option" onclick="checkAnswer('b3')">Network connectivity on devices without built-in Ethernet ports</button>
+      <button class="option" onclick="checkAnswer('c3')">Singing abilities</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. What does the term "Gigabit LAN" refer to in networking?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">A fast-food restaurant for tech enthusiasts</button>
+      <button class="option" onclick="checkAnswer('b4')">A network that supports data transfer rates of 1 gigabit per second</button>
+      <button class="option" onclick="checkAnswer('c4')">A dance move popular among IT professionals</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. How many megabits are in a gigabit?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">100</button>
+      <button class="option" onclick="checkAnswer('b5')">1,000</button>
+      <button class="option" onclick="checkAnswer('c5')">10,000</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. A 2.5 Gigabit LAN adapter offers a data transfer rate of:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">2.5 megabits per second</button>
+      <button class="option" onclick="checkAnswer('b6')">2.5 gigabits per second</button>
+      <button class="option" onclick="checkAnswer('c6')">2.5 terabits per second</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. USB to LAN adapters are commonly used with devices like:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Toasters</button>
+      <button class="option" onclick="checkAnswer('b7')">Laptops, desktops, and gaming consoles</button>
+      <button class="option" onclick="checkAnswer('c7')">Unicycles</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. Which network speed is typically supported by a standard USB to LAN adapter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">1 megabit per second</button>
+      <button class="option" onclick="checkAnswer('b8')">10 megabits per second</button>
+      <button class="option" onclick="checkAnswer('c8')">100 megabits per second</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. USB to LAN adapters are useful for scenarios where:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Cooking pancakes</button>
+      <button class="option" onclick="checkAnswer('b9')">Wired network connection is required on a device without a built-in Ethernet port</button>
+      <button class="option" onclick="checkAnswer('c9')">Training dolphins to code</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. Which of the following is a potential benefit of using a USB to LAN adapter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Teleportation</button>
+      <button class="option" onclick="checkAnswer('b10')">Stable and faster network connectivity compared to Wi-Fi</button>
+      <button class="option" onclick="checkAnswer('c10')">Mind-reading abilities</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        b1: true,
+        c2: true,
+        b3: true,
+        b4: true,
+        b5: true,
+        b6: true,
+        b7: true,
+        c8: true,
+        b9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

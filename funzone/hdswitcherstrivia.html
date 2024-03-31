@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HDMI Splitters and Switchers Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #FF4500;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #FF4500;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #DC143C;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>HDMI Splitters and Switchers Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What is the primary function of an HDMI splitter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Combining audio and video signals</button>
+      <button class="option" onclick="checkAnswer('b1')">Duplicating HDMI signals to multiple displays</button>
+      <button class="option" onclick="checkAnswer('c1')">Transforming into a rocket ship</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. How many HDMI outputs does a typical HDMI splitter have?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">1</button>
+      <button class="option" onclick="checkAnswer('b2')">2 or more</button>
+      <button class="option" onclick="checkAnswer('c2')">0 (it's a trick question)</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. Which of the following is a common use case for HDMI splitters?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">Cooking dinner</button>
+      <button class="option" onclick="checkAnswer('b3')">Connecting multiple displays to a single video source</button>
+      <button class="option" onclick="checkAnswer('c3')">Sending secret messages to space aliens</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. HDMI switchers are used for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">Mixing different HDMI signals</button>
+      <button class="option" onclick="checkAnswer('b4')">Switching between multiple HDMI sources on a single display</button>
+      <button class="option" onclick="checkAnswer('c4')">Building sandcastles at the beach</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. How many HDMI inputs does a typical HDMI switcher have?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">1</button>
+      <button class="option" onclick="checkAnswer('b5')">2 or more</button>
+      <button class="option" onclick="checkAnswer('c5')">Infinity (because it's magical)</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. HDMI switchers are useful for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Turning off the lights</button>
+      <button class="option" onclick="checkAnswer('b6')">Connecting multiple HDMI sources to a single display</button>
+      <button class="option" onclick="checkAnswer('c6')">Finding hidden treasure</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. HDCP, in the context of HDMI, stands for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Highly Developed Cat Pajamas</button>
+      <button class="option" onclick="checkAnswer('b7')">High-Definition Content Protection</button>
+      <button class="option" onclick="checkAnswer('c7')">Hot Dogs Can't Play</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. What is the purpose of HDCP in HDMI devices?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">To make HDMI cables taste like candy</button>
+      <button class="option" onclick="checkAnswer('b8')">To prevent unauthorized copying of high-definition content</button>
+      <button class="option" onclick="checkAnswer('c8')">To teach penguins how to fly</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. HDMI switchers are commonly used in setups with:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Underwater basket weaving</button>
+      <button class="option" onclick="checkAnswer('b9')">Multiple gaming consoles or streaming devices</button>
+      <button class="option" onclick="checkAnswer('c9')">Launching satellites into space</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. What does EDID stand for in the context of HDMI technology?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Eating Delicious Ice Cream Daily</button>
+      <button class="option" onclick="checkAnswer('b10')">Extended Display Identification Data</button>
+      <button class="option" onclick="checkAnswer('c10')">Epic Dragons In Disguise</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        b1: true,
+        b2: true,
+        b3: true,
+        b4: true,
+        b5: true,
+        b6: true,
+        b7: true,
+        b8: true,
+        b9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

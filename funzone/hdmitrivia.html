@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HDMI Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #005cbf;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #005cbf;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #004080;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>HDMI Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What does HDMI stand for?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">High Definition Multimedia Interface</button>
+      <button class="option" onclick="checkAnswer('b1')">High Definition Modem Interface</button>
+      <button class="option" onclick="checkAnswer('c1')">Hyper Digital Multimedia Interface</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. Which version of HDMI introduced support for 4K resolution?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">HDMI 1.2</button>
+      <button class="option" onclick="checkAnswer('b2')">HDMI 1.4</button>
+      <button class="option" onclick="checkAnswer('c2')">HDMI 2.0</button>
+    </div>
+
+    <!-- Add more questions -->
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. What year was HDMI 1.0 first released?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">2002</button>
+      <button class="option" onclick="checkAnswer('b3')">2005</button>
+      <button class="option" onclick="checkAnswer('c3')">2010</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. Which HDMI version added support for Ethernet over HDMI?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">HDMI 1.3</button>
+      <button class="option" onclick="checkAnswer('b4')">HDMI 1.4</button>
+      <button class="option" onclick="checkAnswer('c4')">HDMI 2.0</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. What is the maximum data rate of HDMI 2.1?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">10.2 Gbps</button>
+      <button class="option" onclick="checkAnswer('b5')">18 Gbps</button>
+      <button class="option" onclick="checkAnswer('c5')">48 Gbps</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. HDMI ARC stands for?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Audio Return Channel</button>
+      <button class="option" onclick="checkAnswer('b6')">Advanced Resolution Capability</button>
+      <button class="option" onclick="checkAnswer('c6')">Automatic Reconnect Control</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. What does CEC stand for in HDMI?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Consumer Electronics Control</button>
+      <button class="option" onclick="checkAnswer('b7')">Cable Entertainment Connector</button>
+      <button class="option" onclick="checkAnswer('c7')">Centralized Equipment Configuration</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. Which HDMI version introduced support for Dynamic HDR?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">HDMI 1.4</button>
+      <button class="option" onclick="checkAnswer('b8')">HDMI 2.0</button>
+      <button class="option" onclick="checkAnswer('c8')">HDMI 2.1</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. What is the purpose of HDCP in HDMI?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">High Data Content Protection</button>
+      <button class="option" onclick="checkAnswer('b9')">High-Bandwidth Digital Content Protection</button>
+      <button class="option" onclick="checkAnswer('c9')">HDMI Data Communication Protocol</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. HDMI 2.1 introduced a new cable category. What is it called?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">HDMI Ultra</button>
+      <button class="option" onclick="checkAnswer('b10')">HDMI High Speed</button>
+      <button class="option" onclick="checkAnswer('c10')">HDMI Ultra High Speed</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        a1: true,
+        b2: true,
+        a3: true,
+        b4: true,
+        c5: true,
+        a6: true,
+        a7: true,
+        c8: true,
+        b9: true,
+        c10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+<img src="images/blackilogo.jpg" alt="Black-i Logo" style="width: 50px; height: auto;">
+
+
+        <footer style="margin-top:10px;">
+           <p style="text-align:center; font-size:0.8em;clear:both;">&copy; Blacki Shop. All Rights Reserved.</p>
+        </footer>
+
+      
+
+</body>
+</html>

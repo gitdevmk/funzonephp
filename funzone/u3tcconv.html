@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB to Type-C Female Converter Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #006400;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #006400;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #008000;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>USB to Type-C Female Converter Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What is the primary purpose of a USB to Type-C Female Converter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Growing flowers</button>
+      <button class="option" onclick="checkAnswer('b1')">Adapting USB Type-A devices to connect to USB Type-C ports</button>
+      <button class="option" onclick="checkAnswer('c1')">Predicting the weather</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. Which of the following connectors is typically found on the Type-C end of the converter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">USB Type-A</button>
+      <button class="option" onclick="checkAnswer('b2')">USB Type-C</button>
+      <button class="option" onclick="checkAnswer('c2')">Micro USB</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. USB to Type-C Female Converters are commonly used for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">Building sandcastles</button>
+      <button class="option" onclick="checkAnswer('b3')">Connecting older USB devices to newer Type-C ports</button>
+      <button class="option" onclick="checkAnswer('c3')">Reading minds</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. What is the advantage of using a USB to Type-C Female Converter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">It grants you the ability to fly</button>
+      <button class="option" onclick="checkAnswer('b4')">Enables compatibility with devices that have USB Type-C ports</button>
+      <button class="option" onclick="checkAnswer('c4')">It makes you invisible</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. USB Type-C is known for its:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Super-slow data transfer speeds</button>
+      <button class="option" onclick="checkAnswer('b5')">Reversible connector and faster data transfer rates</button>
+      <button class="option" onclick="checkAnswer('c5')">Ability to speak multiple languages</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. The USB Type-C connector is designed to be:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Difficult to plug in (challenge mode)</button>
+      <button class="option" onclick="checkAnswer('b6')">Reversible for easy and convenient insertion</button>
+      <button class="option" onclick="checkAnswer('c6')">A secret handshake mechanism</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. USB to Type-C Female Converters are useful for connecting Type-C devices to:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">Spaceships</button>
+      <button class="option" onclick="checkAnswer('b7')">Devices with USB Type-A ports</button>
+      <button class="option" onclick="checkAnswer('c7')">Parallel universes</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. USB Type-C supports features such as:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">Teleportation</button>
+      <button class="option" onclick="checkAnswer('b8')">Faster data transfer, power delivery, and video output</button>
+      <button class="option" onclick="checkAnswer('c8')">Mind-reading</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. The USB Type-C standard was developed by:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Avengers</button>
+      <button class="option" onclick="checkAnswer('b9')">Justice League</button>
+      <button class="option" onclick="checkAnswer('c9')">USB Implementers Forum (USB-IF)</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. What is the main benefit of USB Type-C over previous USB standards?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">It's a time machine</button>
+      <button class="option" onclick="checkAnswer('b10')">Reversible connector and higher data transfer rates</button>
+      <button class="option" onclick="checkAnswer('c10')">It can make you invisible</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        b1: true,
+        b2: true,
+        b3: true,
+        b4: true,
+        b5: true,
+        b6: true,
+        b7: true,
+        b8: true,
+        c9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

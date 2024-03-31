@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisplayPort to VGA Converter Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #0000CD;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #0000CD;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #00008B;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>DisplayPort to VGA Converter Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What is the primary purpose of a DisplayPort to VGA converter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Digital to analog signal conversion</button>
+      <button class="option" onclick="checkAnswer('b1')">Analog to digital signal conversion</button>
+      <button class="option" onclick="checkAnswer('c1')">Audio signal conversion</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. Which devices are commonly connected using a DisplayPort to VGA converter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">HD TVs</button>
+      <button class="option" onclick="checkAnswer('b2')">VGA monitors</button>
+      <button class="option" onclick="checkAnswer('c2')">Printers</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. What is the maximum supported resolution for most DisplayPort to VGA converters?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">1080p</button>
+      <button class="option" onclick="checkAnswer('b3')">1440p</button>
+      <button class="option" onclick="checkAnswer('c3')">4K</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. DisplayPort to VGA converters often require a separate cable for transmitting:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">Power</button>
+      <button class="option" onclick="checkAnswer('b4')">Audio</button>
+      <button class="option" onclick="checkAnswer('c4')">Data</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. What is the primary disadvantage of using a DisplayPort to VGA converter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Limited compatibility</button>
+      <button class="option" onclick="checkAnswer('b5')">Expensive cost</button>
+      <button class="option" onclick="checkAnswer('c5')">Requires additional power source</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. DisplayPort to VGA converters often feature a built-in chip for improved:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Resolution</button>
+      <button class="option" onclick="checkAnswer('b6')">Audio quality</button>
+      <button class="option" onclick="checkAnswer('c6')">Color accuracy</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. Which of the following best describes the connector found on the VGA end of the converter?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">USB Type-C</button>
+      <button class="option" onclick="checkAnswer('b7')">HDMI</button>
+      <button class="option" onclick="checkAnswer('c7')">DE-15 (VGA)</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. DisplayPort to VGA converters are often used to connect modern laptops to:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">CRT monitors</button>
+      <button class="option" onclick="checkAnswer('b8')">Printers</button>
+      <button class="option" onclick="checkAnswer('c8')">Analog TVs</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. DisplayPort to VGA converters are especially useful when connecting older devices with:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">HDMI ports</button>
+      <button class="option" onclick="checkAnswer('b9')">USB-C ports</button>
+      <button class="option" onclick="checkAnswer('c9')">VGA ports</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. DisplayPort to VGA converters do not support audio. Users must use a separate cable for:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Power</button>
+      <button class="option" onclick="checkAnswer('b10')">Display</button>
+      <button class="option" onclick="checkAnswer('c10')">Audio</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        b1: true,
+        b2: true,
+        a3: true,
+        a4: true,
+        a5: true,
+        a6: true,
+        c7: true,
+        c8: true,
+        c9: true,
+        c10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DVI Cable Trivia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #006400;
+    }
+
+    #trivia {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .option {
+      margin: 0 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #006400;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .option:hover {
+      background-color: #004d00;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="trivia">
+    <h1>DVI Cable Trivia</h1>
+
+    <!-- Question 1 -->
+    <div class="question" id="q1">
+      1. What does DVI stand for in the context of cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a1')">Digital Video Interface</button>
+      <button class="option" onclick="checkAnswer('b1')">Data Visual Integration</button>
+      <button class="option" onclick="checkAnswer('c1')">Dynamic Virtual Interface</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      2. Which types of video signals can be carried by DVI cables?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a2')">Analog only</button>
+      <button class="option" onclick="checkAnswer('b2')">Digital only</button>
+      <button class="option" onclick="checkAnswer('c2')">Both analog and digital</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      3. DVI-I connectors support both analog and digital signals. What do DVI-D connectors support?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a3')">Analog only</button>
+      <button class="option" onclick="checkAnswer('b3')">Digital only</button>
+      <button class="option" onclick="checkAnswer('c3')">Both analog and digital</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      4. DVI-D Single Link supports a maximum resolution of:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a4')">1080p</button>
+      <button class="option" onclick="checkAnswer('b4')">1440p</button>
+      <button class="option" onclick="checkAnswer('c4')">4K</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      5. Which of the following devices is likely to use a DVI connection?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a5')">Modern smartphones</button>
+      <button class="option" onclick="checkAnswer('b5')">Gaming consoles</button>
+      <button class="option" onclick="checkAnswer('c5')">Typewriters</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6">
+      6. What is the primary disadvantage of DVI compared to HDMI and DisplayPort?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a6')">Limited resolution support</button>
+      <button class="option" onclick="checkAnswer('b6')">Bulkiness of connectors</button>
+      <button class="option" onclick="checkAnswer('c6')">Lack of audio support</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7">
+      7. DVI connectors come in different variants, including DVI-D, DVI-I, and:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a7')">DVI-E</button>
+      <button class="option" onclick="checkAnswer('b7')">DVI-A</button>
+      <button class="option" onclick="checkAnswer('c7')">DVI-O</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8">
+      8. DVI-A cables are designed for transmitting:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a8')">Digital signals</button>
+      <button class="option" onclick="checkAnswer('b8')">Analog signals</button>
+      <button class="option" onclick="checkAnswer('c8')">Both digital and analog signals</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9">
+      9. What is the purpose of the additional pins in a DVI-I connector compared to a DVI-D connector?
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a9')">Audio transmission</button>
+      <button class="option" onclick="checkAnswer('b9')">Improved video quality</button>
+      <button class="option" onclick="checkAnswer('c9')">Compatibility with VGA signals</button>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10">
+      10. DVI cables are often used to connect computers to:
+    </div>
+    <div class="options">
+      <button class="option" onclick="checkAnswer('a10')">Microwaves</button>
+      <button class="option" onclick="checkAnswer('b10')">Monitors</button>
+      <button class="option" onclick="checkAnswer('c10')">Refrigerators</button>
+    </div>
+
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkAnswer(answerId) {
+      const correctAnswers = {
+        a1: true,
+        c2: true,
+        b3: true,
+        a4: true,
+        b5: true,
+        c6: true,
+        b7: true,
+        b8: true,
+        c9: true,
+        b10: true,
+      };
+
+      if (correctAnswers[answerId]) {
+        score++;
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `Score: ${score}`;
+    }
+  </script>
+
+</body>
+</html>
